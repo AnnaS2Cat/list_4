@@ -1,6 +1,7 @@
 //Crie uma função todos_os_primosque recebe um inteiro maxe exibe todos os primos entre 1e max.
 //Use a função eh_primo do exercício anterior sem alterá-la.
 
+#include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
 
@@ -10,10 +11,22 @@ bool primo(int a){ //uso bool para usar o true e false
         return false;}
     for (i=2; i<=sqrt(a); i++){
        if (a%i==0){ 
-           return false;
-    }
+           return false;}
 } 
     return true;
 }
+void todos_os_primos(int max) { //void pra n precisar de return
+    printf("Números primos entre 1 e %d:\n", max);
+    for (int i = 1; i <= max; i++) {
+        if (primo(i)) {
+            printf("%d ", i);
+        }
+    }
+}
+int main(void) {
+    int b;
+    printf("Digite um número: ");
+    scanf("%d", &b);
 
+    todos_os_primos(b);}
 
